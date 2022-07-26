@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch</title>
+  </head>
+  <body>
+    <script>
+        // Some Gblobal variables;
+      let USSD = prompt("Enter USSD");
+      let amount;
+      let number;
+      let accName;
+
+      switch (true) {
+        case USSD == "*737#":
+          {
+            // Prompt Users for a selection
+            let select = prompt(`Select
+                    1. Airtime-Self
+                    2. Airtime-Others
+                    3. Data
+                    4. Transfer`);
+            switch (true) {
+              // Airtime self
+              case select == "1":
+                amount = prompt("Enter amount");
+                alert(`Your recharge of ${amount} was successful`);
+                break;
+
+              // Airtime Others
+              case select == 2:
+                prompt(`Select
+                            1. MTN
+                            2. Airtel
+                            3. GLO
+                            4. 9Mobile`);
+                number = prompt("Enter Phone number");
+                amount = prompt("Enter amount");
+                alert(`Your recharge of ${amount} to ${number} was successful`);
+                break;
+
+              // Data subscription
+              case select == 3:
+                prompt(`Select
+                                1. MTN
+                                2. Airtel
+                                3. GLO
+                                4. 9Mobile`);
+                number = prompt("Enter Phone number");
+                amount = prompt(`Select
+                                1. 1GB - 100
+                                2. 2GB - 200
+                                3. 3GB - 300
+                                4. 5GB - 400
+                                5. 20GB - 1000`);
+                switch (true) {
+                  case amount == 1:
+                    alert(`1GB data sent to ${number} succesfully`);
+                    break;
+                  case amount == 2:
+                    alert(`2GB data sent to ${number} succesfully`);
+                    break;
+                  case amount == 3:
+                    alert(`3GB data sent to ${number} succesfully`);
+                    break;
+                    case amount == 4:
+                    alert(`5GB data sent to ${number} succesfully`);
+                    break;
+                    case amount == 5:
+                    alert(`20GB data sent to ${number} succesfully`);
+                    break;
+                  default:
+                    alert("Invalid selection");
+                    break;
+                }
+                break;
+
+            // Bank Transfer
+              case select == 4:
+                amount = prompt("Enter amount");
+                number = prompt("Enter account number");
+                accName = prompt("Enter account name");
+                alert(
+                  `Your transfer of ${amount} to ${accName} was successful`
+                );
+                break;
+              default:
+                alert("Invalid selection");
+                break;
+            }
+          }
+          break;
+        default:
+          alert("Error");
+      }
+    </script>
+  </body>
+</html>
