@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let grid = function(row, col){
+            // created an empty string
+            let str = '';
+            // printing the row
+            for(let i = 0; i < row; i++){
+                // printing the column
+                for(let j = 0; j < col; j++){
+                    // even row starts with "#"
+                    if(i % 2 === 0){
+                        // if the column is even enter " " else enter "#"
+                        if(j % 2 === 0){
+                            str += ' ';
+                        }
+                        else{
+                            str += "#";
+                        }
+                        // str += " "
+                        
+                    }else{
+                        if(j % 2 === 0){
+                            str += "#";
+                        }
+                        else{
+                            str += " ";
+                        }
+                        // // str += "#"
+                    }
+                    
+                }
+                str += '\n';
+            }
+            return str;
+        };
+        console.log(grid(8, 8));
+    </script>
+</body>
+</html>
